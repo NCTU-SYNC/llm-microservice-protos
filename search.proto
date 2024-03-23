@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message SearchRequest {
+  repeated string keywords = 1;
+  optional uint32 similarity_top_k = 2;
+}
+
+message SearchResponse { repeated string ids = 1; }
+
+service SearchService { rpc Search(SearchRequest) returns (SearchResponse); }
