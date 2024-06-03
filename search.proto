@@ -5,6 +5,14 @@ message SearchRequest {
   optional uint32 similarity_top_k = 2;
 }
 
-message SearchResponse { repeated string ids = 1; }
+message RetrieveResult {
+  string id = 1;
+  float score = 2;
+  string content = 3;
+}
+
+message SearchResponse {
+  repeated RetrieveResult results = 1;
+}
 
 service SearchService { rpc Search(SearchRequest) returns (SearchResponse); }
