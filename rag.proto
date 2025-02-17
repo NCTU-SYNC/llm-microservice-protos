@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message RagRequest {
+  repeated string keywords = 1;
+  optional uint32 similarity_top_k = 2;
+}
+
+message RagResponse {
+  repeated string retrieved_ids = 1;
+  string summary = 2;
+}
+
+service RagService { rpc Rag(RagRequest) returns (RagResponse); }

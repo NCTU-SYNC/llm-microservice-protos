@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message SummarizeRequest { repeated string contents = 1; }
-
-message SummarizeResponse { string summary = 1; }
-
-service SummarizeService {
-  rpc Summarize(SummarizeRequest) returns (SummarizeResponse);
-}
